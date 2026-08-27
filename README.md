@@ -19,3 +19,7 @@ Revise os requisitos de cada habilidade antes de aplicá-la a um projeto. Não i
 ## Licenças e atribuições
 
 As licenças e avisos presentes nas pastas das habilidades foram preservados. Em especial, os materiais derivados do projeto Godogen permanecem acompanhados das respectivas atribuições e licença.
+
+## Automação e integrações
+
+O repositório contém um [workflow de validação](./.github/workflows/validate-skills.yml) para executar a checagem estrutural das três habilidades em alterações e pull requests. Os guias de [segredos e variáveis](./docs/github-actions-and-secrets.md), [Mercado Pago pela Shopify](./docs/integrations/mercado-pago-shopify.md) e [INOVAFARMA](./docs/integrations/inovafarma.md) deixam as integrações preparadas sem armazenar credenciais reais.

@@ -1,0 +1,49 @@
+name: Validar habilidades
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - ".github/workflows/validate-skills.yml"
+  pull_request:
+    paths:
+      - "skills/**"
+      - ".github/workflows/validate-skills.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-skills-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validar ${{ matrix.skill }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        skill:
+          - skill-creator
+          - game-dev
+          - video-generator
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependência do validador
+        run: python -m pip install --disable-pip-version-check pyyaml
+
+      - name: Validar metadados e estrutura
+        run: python skills/skill-creator/scripts/quick_validate.py "$GITHUB_WORKSPACE/skills/${{ matrix.skill }}"
+
+      - name: Conferir arquivos obrigatórios
+        run: test -f "skills/${{ matrix.skill }}/SKILL.md"

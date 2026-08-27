@@ -1,0 +1,19 @@
+{
+  "commerce": {
+    "serviceArea": "Anápolis, GO",
+    "payment": {
+      "platform": "Shopify",
+      "provider": "Mercado Pago",
+      "enabled": false
+    },
+    "erp": {
+      "provider": "INOVAFARMA",
+      "mode": "disabled",
+      "syncEnabled": false
+    },
+    "catalog": {
+      "importEnabled": false,
+      "duplicateSkuPolicy": "block-and-report"
+    }
+  }
+}
