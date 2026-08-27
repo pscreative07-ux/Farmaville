@@ -23,3 +23,5 @@ As licenças e avisos presentes nas pastas das habilidades foram preservados. Em
 ## Automação e integrações
 
 O repositório contém um [workflow de validação](./.github/workflows/validate-skills.yml) para executar a checagem estrutural das três habilidades em alterações e pull requests. Os guias de [segredos e variáveis](./docs/github-actions-and-secrets.md), [Mercado Pago pela Shopify](./docs/integrations/mercado-pago-shopify.md) e [INOVAFARMA](./docs/integrations/inovafarma.md) deixam as integrações preparadas sem armazenar credenciais reais.
+
+O guia de [teste local do workflow](./docs/local-workflow-testing.md) permite validar as habilidades antes de enviar alterações. O roteiro de [lançamento Shopify e domínio](./docs/shopify-launch-and-domain.md) separa a arquitetura atual da Farmaville das configurações de uma loja nativa da Shopify.
