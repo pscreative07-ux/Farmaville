@@ -3,3 +3,9 @@ __pycache__/
 *.py[cod]
 .env
 .env.*
+
+# Generated dependencies and build outputs
+**/node_modules/
+**/dist/
+**/.manus-logs/
+coverage/
