@@ -1,18 +1,32 @@
-import type { CreateExpressContextOptions } from "@trpc/server/adapters/express";
+import type { IncomingHttpHeaders } from "node:http";
 import type { User } from "../../drizzle/schema";
+import { getUserByOpenId, upsertUser } from "../db";
 import { sdk } from "./sdk";
 import { getSupabaseUser } from "./supabase";
-import { getUserByOpenId, upsertUser } from "../db";
+
+export type RequestLike = {
+  headers: IncomingHttpHeaders;
+  protocol?: string;
+};
+
+export type ResponseLike = {
+  clearCookie?: (name: string, options?: Record<string, unknown>) => unknown;
+  setHeader?: (name: string, value: string | string[]) => unknown;
+  end?: (body?: string) => unknown;
+};
 
 export type TrpcContext = {
-  req: CreateExpressContextOptions["req"];
-  res: CreateExpressContextOptions["res"];
+  req: RequestLike;
+  res: ResponseLike;
   user: User | null;
 };
 
-export async function createContext(
-  opts: CreateExpressContextOptions
-): Promise<TrpcContext> {
+type ContextOptions = {
+  req: RequestLike;
+  res: ResponseLike;
+};
+
+export async function createContext(opts: ContextOptions): Promise<TrpcContext> {
   let user: User | null = null;
 
   const authorization = opts.req.headers.authorization;
@@ -30,8 +44,8 @@ export async function createContext(
         await upsertUser({
           openId,
           name:
-            supabaseUser.user_metadata?.full_name ??
-            supabaseUser.user_metadata?.name ??
+            (supabaseUser.user_metadata?.full_name as string | undefined) ??
+            (supabaseUser.user_metadata?.name as string | undefined) ??
             null,
           email: supabaseUser.email ?? null,
           loginMethod: "supabase",
@@ -44,7 +58,7 @@ export async function createContext(
   if (!user) {
     try {
       user = await sdk.authenticateRequest(opts.req);
-    } catch (error) {
+    } catch {
       // Authentication is optional for public procedures.
       user = null;
     }

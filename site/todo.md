@@ -1,0 +1,34 @@
+# Operação profissional de e-commerce
+
+- [x] Confirmar a plataforma de comércio, o ERP, a logística e o responsável por receitas.
+- [ ] Integrar o INOVAFARMA como origem autorizada de preço e estoque quando forem fornecidos o acesso e a documentação técnica.
+- [x] Criar pontos de configuração e documentação para ativar futuramente a integração INOVAFARMA, sem gravar credenciais ou dados do ERP agora.
+- [x] Restringir as opções comerciais à entrega e retirada em Anápolis, com confirmação da área atendida no pedido.
+- [ ] Preparar o checkout Shopify para Mercado Pago após a loja ser reivindicada e o aplicativo ser conectado pelo titular.
+- [x] Exibir o checkout como etapa preparada até a reivindicação da loja e a conexão do Mercado Pago pelo titular.
+- [ ] Importar o catálogo real autorizado após a reivindicação da loja, preservando SKU, preço, estoque e regras de receita.
+- [x] Atualizar a habilidade reutilizável para checkout, estoque, pedidos e atendimento seguro.
+- [x] Exibir Lucas Antônio · CRF-GO 11193 como informação institucional confirmada de atendimento responsável.
+- [x] Modelar infraestrutura verificável de pedidos e status de atendimento no backend antes de ativar a operação.
+- [ ] Conectar a loja Shopify ao catálogo real e configurar pagamentos após a titularidade ser reivindicada.
+- [x] Criar a experiência base de conta, estado responsável de pedidos e páginas institucionais.
+- [x] Criar páginas públicas Sobre a Farmaville e Perguntas frequentes com dados confirmados.
+- [x] Criar área de conta com login, estado vazio responsável para pedidos e acesso à lista de desejos.
+- [x] Publicar a identificação Lucas Antônio · CRF-GO 11193 na jornada de atendimento farmacêutico.
+- [ ] Configurar as integrações reais de pagamento, estoque, frete e receitas com credenciais autorizadas.
+- [x] Executar e documentar auditoria específica de segurança, autenticação e acessibilidade antes da ativação.
+- [ ] Salvar checkpoint e entregar a evolução.
+- [ ] Adaptar o frontend e as rotas para a arquitetura Vercel + Supabase sem expor chaves.
+- [ ] Preparar o deploy de preview na Vercel com variáveis de ambiente seguras.
+- [ ] Validar a conexão Supabase e os fluxos principais no preview.
+- [ ] Ativar pedidos, rastreio e sincronização de desejos após a integração da loja e do ERP.
+- [x] Verificar o repositório GitHub Farmaville e a autorização de publicação.
+- [x] Preparar as habilidades selecionadas em uma estrutura pública e sem segredos.
+- [x] Publicar as habilidades aprovadas e confirmar os arquivos no repositório.
+- [x] Documentar no repositório o uso seguro de variáveis de ambiente e GitHub Secrets.
+- [x] Criar workflow GitHub Actions para validar as habilidades em alterações e pull requests.
+- [x] Adicionar modelos de configuração para Mercado Pago e INOVAFARMA sem segredos reais.
+- [x] Publicar e verificar a automação e a documentação no GitHub.
+- [x] Documentar a validação local do workflow de habilidades antes de novos envios ao GitHub.
+- [x] Documentar os passos de ativação da loja Shopify e conexão de domínio oficial.
+- [x] Criar apresentação resumida da arquitetura e das integrações configuradas.
