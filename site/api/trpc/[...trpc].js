@@ -1163,6 +1163,7 @@ async function createContext(opts) {
 
 // server/vercel-trpc-handler.ts
 var handler = createHTTPHandler({
+  basePath: "/api/trpc/",
   router: appRouter,
   createContext: ({ req, res }) => createContext({ req, res })
 });
