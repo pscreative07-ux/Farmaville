@@ -1,6 +1,6 @@
 import { createHTTPHandler } from "@trpc/server/adapters/standalone";
-import { appRouter } from "../../server/routers.ts";
-import { createContext } from "../../server/_core/context.ts";
+import { appRouter } from "./routers.ts";
+import { createContext } from "./_core/context.ts";
 
 const handler = createHTTPHandler({
   router: appRouter,
